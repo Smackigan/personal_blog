@@ -1,4 +1,4 @@
-<x-app-layout meta-title="Jean Paul blog - About us page" meta-description="Lorem ipsum">
+<x-app-layout meta-title="Jean Paul le Blogue - About me page" meta-description="About me page">
 
     <section class="w-full flex flex-col items-center px-3">
     

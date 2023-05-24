@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $metaTitle ?: 'Jean Paul Blogue' }}</title>
+    <title>{{ $metaTitle ?: 'Jean Paul le Blogue' }}</title>
     <meta name="author" content="Jean Paul">
     <meta name="description" content="{{ $metaDescription }}">
 
@@ -104,7 +104,7 @@
 
 <footer class="w-full border-t bg-white pb-12">
     <div class="w-full container mx-auto flex flex-col items-center">
-        <div class="uppercase py-6">&copy; myblog.com</div>
+        <div class="uppercase py-4">&copy; libavaworks@gmail.com</div>
     </div>
 </footer>
 
