@@ -13,24 +13,34 @@ class Comments extends Component
     public Collection $comments;
 
     protected $listeners = [
-        'commentCreated' => 'commentCreated'
+        'commentCreated' => '$refresh',
+        'commentDeleted' => '$refresh',
     ];
 
     public function mount(Post $post)
     {
         $this->post = $post;
-        $this->comments = Comment::where('post_id', '=', $this->post->id)->orderByDesc('created_at')->get();
+
     }
 
     public function render()
     {
+        // $comments = $this->selectComments();
+        // return view('livewire.comments', compact('comments'));
+
+        $this->comments = $this->selectComments();
         return view('livewire.comments');
     }
 
-    public function commentCreated(int $id)
+
+    public function selectComments()
     {
-        $comment = Comment::where('id', '=', $id)->first();
-        $this->comments = $this->comments->prepend($comment);
+        return Comment::where('post_id', '=', $this->post->id)
+        ->with(['post', 'user', 'comments'])
+        ->whereNull('parent_id')
+        ->orderByDesc('created_at')
+        ->get();
     }
+
 }
 
