@@ -1,5 +1,5 @@
 <x-app-layout meta-title="Jean Paul le Blogue" meta-description="Jean Paul's travel blog">
-<div class="container max-w-4xl mx-auto py-6">
+<div class="container max-w-6xl mx-auto py-6">
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mp-8">
     {{-- Latest post --}}
